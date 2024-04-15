@@ -1,4 +1,5 @@
 package controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,19 +17,19 @@ public class SignUpController {
     @Autowired
     SignUpService signupservice;
 
-
     @PostMapping("/newuser")
-    public User addNew(@RequestBody User u){
+    public User addNew(@RequestBody User u) {
         return signupservice.addUser(u);
     }
+
     @GetMapping("users")
-    public List<User> getUSers(){
-        
+    public List<User> getUSers() {
+
         return null;
     }
 
     @GetMapping("user/{id}")
-    public User get(@PathVariable int id){
-        return new User(1,"Username","Passkey","firstName", "lastName");
+    public User get(@PathVariable int id) {
+        return new User(1, "Username", "Passkey", "firstName", "lastName");
     }
 }
